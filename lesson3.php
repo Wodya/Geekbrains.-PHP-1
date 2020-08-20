@@ -88,8 +88,34 @@ foreach($regions as $region => $cities) {
 }
 
 echo "<BR>Задание 9<BR>";
+$translate[' '] = '_';
 function convert2($str) {
     global $translate;
-    return str_replace(array_keys($translate), $translate, str_replace(" ", "_", $str));
+    return str_replace(array_keys($translate), $translate, $str);
 }
 echo convert2("добрый день!");
+
+echo "<BR><BR>Задание 10<BR>";
+$html = file_get_contents("lesson3_1.html");
+function generateTable(int $rows, int $cols):string
+{
+    $html = '<tr><td></td>';
+    //header
+    for($i = 1; $i <= $cols; $i++){
+        $html .= "<td>$i</td>";
+    }
+    $html .= '</tr>';
+
+    for($i = 1; $i <= $rows; $i++) {
+        $html .= '<tr>';
+        for ($j = 0; $j <= $cols; $j++) {
+            $num = $j == 0 ? $i : $i*$j;
+            $html .= "<td>$num</td>";
+        }
+        $html .= '</tr>';
+    }
+    return $html;
+}
+$table = generateTable(4,5);
+$html = str_replace('{{table}}',$table, $html);
+echo $html;
