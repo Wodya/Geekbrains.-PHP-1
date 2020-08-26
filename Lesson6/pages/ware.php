@@ -14,9 +14,10 @@
         if(!empty($text)){
             $query = mysqli_query($link, "INSERT INTO `php_1`.`reviews` (`image_id`, `text`) VALUES ($id, '$text');");
             mysqli_query($link, $query);
-            $_POST['review_text'] = '';
+            header("Location: ?page=8&img_id=$id&novisit");
+            exit();
         }
-    }else{
+    }else if(!key_exists('novisit',$_GET)){
         $query = mysqli_query($link, "Update images set visit_count = visit_count + 1 where id=$id");
         mysqli_query($link, $query);
     }
