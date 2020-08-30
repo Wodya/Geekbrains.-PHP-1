@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li><a href="?page=1">Главная</a></li>
+        <li><a href="?p=good&a=all">Товары</a></li>
+        <li><a href="?p=cart">Корзина <span>({{GOOD_COUNT}})</span></a></li>
+        <li><a href="?page=2">Пользователи</a></li>
+        <li><a href="?p=user&a=add">Добавить пользователя</a></li>
+        <li><a href="?p=auth&a=index">Вход</a></li>
+    </ul>
+    <p style="color: red">{{MSG}}</p>
+    {{content}}
+</body>
+</html>
