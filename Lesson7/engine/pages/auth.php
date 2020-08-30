@@ -32,13 +32,13 @@ function loginAction()
     $password = $_POST['password'];
     $login = clearStr($_POST['login']);
 
-    $sql = "SELECT login, password FROM users WHERE login = '{$login}'";
+    $sql = "SELECT id, login, password FROM users WHERE login = '{$login}'";
     $result = mysqli_query(getLink(), $sql);
     $userData = mysqli_fetch_assoc($result);
     if (!empty($userData) && password_verify($password, $userData['password'])) {
-        $_SESSION['user'] = 1;
+        $_SESSION['user'] = $userData['id'];
     }
-    header('Location: /?p=auth');
+    header('Location: /?p=user&a=cabinet');
     return;
 }
 

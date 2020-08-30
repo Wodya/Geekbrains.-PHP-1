@@ -4,9 +4,8 @@ function getLink()
 {
     static $link;
     if (empty($link)) {
-        $link = mysqli_connect('localhost', 'root', '', 'gbphp');
+        $link = mysqli_connect('127.0.0.1', 'root', 'www12345', 'php_1');
     }
-
     return $link;
 }
 

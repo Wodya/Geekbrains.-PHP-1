@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <ul>
-        <li><a href="?page=1">Главная</a></li>
-        <li><a href="?page=2">Пользователи</a></li>
-        <li><a href="?p=user&a=add">Добавить пользователя</a></li>
-        <li><a href="?p=auth&a=index">Вход</a></li>
-    </ul>
-    {{content}}
+    <nav class="center menu">
+        <ul>
+            <li><a href="?page=1">Главная</a></li>
+            <li><a href="?p=good">Каталог</a></li>
+            <li><a href="?page=2">Пользователи</a></li>
+            <li><a href="?p=user&a=add">Добавить пользователя</a></li>
+            <li><a href="?p=basket">Корзина</a></li>
+            <li><a href="?p=user&a=cabinet">Кабинет</a></li>
+            <li><a href="?p=auth&a=index">Вход</a></li>
+        </ul>
+    </nav>
+    <div class="center content">
+        {{content}}
+    </div>
 </body>
 </html>
