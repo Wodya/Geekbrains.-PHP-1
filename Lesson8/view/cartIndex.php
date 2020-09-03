@@ -6,7 +6,7 @@
 <?php if (empty($goods)): ?>
     'Нет товаров';
 <?php else : ?>
-    <? foreach ($goods as $id => $good) : ?>
+    <?php foreach ($goods as $id => $good) : ?>
         <?php $total = $good['count'] * $good['price']; ?>
         <p>товар: <?= $good['name'] ?></p>
         <p>
@@ -19,3 +19,7 @@
         <hr>
     <?php endforeach; ?>
 <?php endIf; ?>
+<?php if (!empty(getLoginUser()) && !empty($goods)): ?>
+    <button onclick="makeOrder()">Сделать заказ</button>
+<?php endif; ?>
+

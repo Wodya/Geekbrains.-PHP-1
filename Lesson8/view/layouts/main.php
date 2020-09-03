@@ -10,20 +10,14 @@
     <meta charset="UTF-8">
     <title><?= $title ?></title>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<ul>
-    <li><a href="?page=1">Главная</a></li>
-    <li><a href="?p=good&a=all">Товары</a></li>
-    <li>
-        <a href="?p=cart">
-            Корзина <span class="countGood">(<?= $countGoodsInCart ?>)</span>
-        </a>
-    </li>
-    <li><a href="?page=2">Пользователи</a></li>
-    <li><a href="?p=user&a=add">Добавить пользователя</a></li>
-    <li><a href="?p=auth&a=index">Вход</a></li>
-</ul>
+<div class="menu center">
+    <ul>
+        <?= getMainMenu() ?>
+    </ul>
+</div>
 <p style="color: red"><?= $msg ?></p>
     <?= $content ?>
 

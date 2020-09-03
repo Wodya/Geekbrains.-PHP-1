@@ -4,7 +4,7 @@ function indexAction()
     return render(
         'cartIndex',
         [
-            'goods' => $_SESSION['goods'],
+            'goods' => empty($_SESSION['goods']) ? [] : $_SESSION['goods'],
             'title' => 'Корзина',
         ]
     );
