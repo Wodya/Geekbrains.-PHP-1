@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.center {
+    padding: 0 calc(50% - 570px);
+}
+a {
+    text-decoration: none;
+    color: black;
+    transition: .5s linear;
+}
+nav{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.menu{
+    list-style: none;
+}
+.menu ul{
+    overflow: hidden;
+}
+.menu li{
+    float: left;
+}
+.menu a{
+    display: block;
+    padding: 15px;
+    background-color: rgba(177, 152, 145, .3);;
+}
+.menu a:hover{
+    background: #ADC0CE
+}
+.view{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.ware{
+    margin-top: 20px;
+}
+.image{
+    height: 200px;
+    width: 300px;
+}
+.image_big{
+    max-height: 600px;
+}
+.calc-buttons{
+    margin-top: 15px;
+}
+.calc-button{
+    width: 100px;
+    margin-right: 10px;
+}
+.review{
+    border-top: 1px solid black;
+    margin-top: 15px;
+}
+.review_date{
+    font-weight: bold;
+}
+.review_form{
+    margin-top: 15px;
+}
+.review_form_text{
+    width: 400px;
+}
+.review_form_button{
+    width: 130px;
+    margin-left: 15px;
+}
