@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+.center {
+    padding: 0 calc(50% - 570px);
+}
+.view{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.image{
+    height: 200px;
+    width: 300px;
+    margin-bottom: 20px;
+}
