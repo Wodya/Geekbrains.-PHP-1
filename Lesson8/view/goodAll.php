@@ -3,10 +3,10 @@
 ?>
 <h1>Товары</h1>
 
-<? foreach ($goods as $good) : ?>
+<?php foreach ($goods as $good) : ?>
     <h3><?= $good['name'] ?></h3>
     <p>
-        <img style="width: 100px" src="/img/1.jpg" alt="">
+        <img style="width: 100px" src=<?= "/img/image{$good['id']}.jpg"?> alt="">
     </p>
     <p><?= $good['info'] ?></p>
     <p><?= $good['price'] ?>р.</p>

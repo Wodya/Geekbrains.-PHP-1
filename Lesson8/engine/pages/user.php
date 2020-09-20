@@ -1,25 +1,19 @@
 <?php
-function indexAction()
-{
-    return allAction();
-}
-
-function allAction()
-{
-    return '<h1>Пользователи</h1>';
-}
-
-function oneAction()
-{
-    return '<h1>Пользователь</h1>';
-}
-
 function addAction()
 {
-    if (!isAdmin()) {
-        header('Location: /');
-        return '';
-    }
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $login = $_POST['login'];
+        $name = $_POST['name'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT );
+        $sql = "INSERT INTO users 
+                    (login, password, name) 
+                VALUES ('{$login}', '{$password}', '{$name}')";
+        mysqli_query(getLink(), $sql);
 
-    return 'Добавление';
+        header('Location: /?p=auth');
+        exit();
+    }
+    return render("userAddView",[
+        'title' => 'Добавление пользователя',
+    ]);
 }
